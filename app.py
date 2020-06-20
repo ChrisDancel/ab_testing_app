@@ -16,7 +16,15 @@ def get_stats_ab_test(mean_1, std_1, mean_2, std_2):
 
 
 markdown_text = """
-This app demonstrates single sided test
+This application demonstrates how AB testing can work when comparing two distributions. 
+
+Note - this is a one sided test with Distribution 2 > Distribution 1
+
+#### Usage
+* on the sidebar, change parameters to see how the distribution varies
+* mean values for distribution 2 cannot be smaller than for distribution 1
+
+
 """
 
 
@@ -26,13 +34,13 @@ def main():
 
     # create parameter selections in slider
     alpha = st.sidebar.slider('alpha', value=0.05, step=0.01)
-    mean_1 = st.sidebar.slider('Mean D1', value=10.0, step=0.1, min_value=0.0, max_value=20.0)
-    std_1 = st.sidebar.slider('Std D1', value=0.1, step=0.02, min_value=0.02, max_value=2.0)
-    size_1 = st.sidebar.slider('# Samples D1', value=1000, min_value=100, max_value=10000)
+    mean_1 = st.sidebar.slider('Mean of Distribution 1', value=10.0, step=0.1, min_value=0.0, max_value=20.0)
+    std_1 = st.sidebar.slider('Standard Deviation of Distribution 1', value=0.1, step=0.02, min_value=0.02, max_value=2.0)
+    size_1 = st.sidebar.slider('# Samples in Distribution 1', value=1000, min_value=100, max_value=10000)
 
-    mean_2 = st.sidebar.slider('Mean D2', value=mean_1 + 1, step=0.1, min_value=mean_1, max_value=mean_1 + 3)
-    std_2 = st.sidebar.slider('Std D2', value=0.1, step=0.02, min_value=0.02, max_value=2.0)
-    size_2 = st.sidebar.slider('# Samples D2', value=1000, min_value=100, max_value=10000)
+    mean_2 = st.sidebar.slider('Mean of Distribution 2', value=mean_1 + 1, step=0.1, min_value=mean_1, max_value=mean_1 + 3)
+    std_2 = st.sidebar.slider('Standard Deviation of Distribution 2', value=0.1, step=0.02, min_value=0.02, max_value=2.0)
+    size_2 = st.sidebar.slider('# Samples in Distribution 2', value=1000, min_value=100, max_value=10000)
 
     s1 = np.random.normal(mean_1, std_1, size_1)
     s2 = np.random.normal(mean_2, std_2, size_2)

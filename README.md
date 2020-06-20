@@ -1,6 +1,14 @@
 # AB testing application
 
-TODO - add description
+This application demonstrates how AB testing can work when comparing two distributions. 
+
+#### Note
+This is a one sided test with Distribution 2 > Distribution 1. 
+
+#### Usage
+* on the sidebar, change parameters to see how the distribution varies
+* mean values for distribution 2 cannot be smaller than for distribution 1
+
 
 # 1. Setup
 
