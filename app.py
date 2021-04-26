@@ -33,6 +33,7 @@ def main():
     st.markdown(markdown_text)
 
     # create parameter selections in slider
+    st.sidebar.markdown('# Parameter Selection')
     alpha = st.sidebar.slider('alpha', value=0.05, step=0.01)
     mean_1 = st.sidebar.slider('Mean of Distribution 1', value=10.0, step=0.1, min_value=0.0, max_value=20.0)
     std_1 = st.sidebar.slider('Standard Deviation of Distribution 1', value=0.1, step=0.02, min_value=0.02, max_value=2.0)
